@@ -5,12 +5,12 @@ export const configuration = () => {
     isProduction: true,
     baseUrl: 'process.env.BASE_URL',
     database: {
-      type: 'process.env.DATABASE_TYPE',
-      host: 'process.env.DATABASE_HOST',
-      port: 'process.env.DATABASE_PORT',
-      username: 'process.env.DATABASE_USERNAME',
-      password: 'process.env.DATABASE_PASSWORD',
-      database: 'process.env.DATABASE_DATABASE',
+      type: 'mysql',
+      host: 'localhost',
+      port: '3306',
+      username: 'dligahbp_wehdat_dev',
+      password: 'TsAf]UTmm%1T',
+      database: 'dligahbp_wehdat_dev',
     },
   };
 };
