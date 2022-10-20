@@ -24,6 +24,7 @@ import { configuration } from './config/configuration';
       database: 'dligahbp_wehdat_dev',
       entities: [Apartment],
       synchronize: true,
+      charset: 'UTF8_GENERAL_CI',
     }),
   ],
   controllers: [AppController],
