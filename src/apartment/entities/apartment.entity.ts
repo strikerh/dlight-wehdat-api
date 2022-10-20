@@ -26,6 +26,9 @@ export class Apartment {
   address: string;
 
   @Column()
+  address22: string;
+
+  @Column()
   contactNumber: string;
 
   @Column({ type: 'json' })
