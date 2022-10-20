@@ -9,7 +9,7 @@ import { Repository } from 'typeorm';
 export class ApartmentService {
   constructor(
     @InjectRepository(Apartment)
-    private apartmentRepository: Repository<Apartment>,
+    private apartmentRepository: Repository<any>,
   ) {}
 
   async create(createApartmentDto: CreateApartmentDto) {
