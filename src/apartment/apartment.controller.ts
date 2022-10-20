@@ -34,7 +34,7 @@ export class ApartmentController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    // return { df: this.configService.get('database') };
+     return { df: this.configService.get('database') };
     // return this.apartmentService.findOne(+id);
   }
 
