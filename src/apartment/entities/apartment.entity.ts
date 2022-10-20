@@ -14,13 +14,13 @@ export class Apartment {
   @Column()
   description: string;
   @Column({ type: 'json' })
-  images: string[];
+  images?: string[];
 
   @Column()
   period: string;
 
   @Column({ type: 'json' })
-  features: { icon: string; text: string; suffix: string }[];
+  features?: { icon: string; text: string; suffix: string }[];
 
   @Column()
   address: string;
@@ -29,5 +29,5 @@ export class Apartment {
   contactNumber: string;
 
   @Column({ type: 'json' })
-  latLng: { lat: number; lng: number };
+  latLng?: { lat: number; lng: number };
 }
