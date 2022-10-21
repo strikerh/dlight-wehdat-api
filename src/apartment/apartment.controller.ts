@@ -14,7 +14,7 @@ import { CreateApartmentDto } from './dto/create-apartment.dto';
 import { UpdateApartmentDto } from './dto/update-apartment.dto';
 import { ConfigService } from '@nestjs/config';
 
-@Controller('v1/apartment')
+@Controller('v1/apartments')
 export class ApartmentController {
   constructor(
     private readonly apartmentService: ApartmentService,
@@ -22,7 +22,6 @@ export class ApartmentController {
   ) {}
 
   @Post()
-
   @UsePipes(ValidationPipe)
   create(@Body() createApartmentDto: CreateApartmentDto) {
     return this.apartmentService.create(createApartmentDto);
