@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DatabaseConfig } from './config/database.config';
+import { ApartmentModule } from './apartment/apartment.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { DatabaseConfig } from './config/database.config';
       imports: [ConfigModule],
       useClass: DatabaseConfig,
     }),
+    ApartmentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
