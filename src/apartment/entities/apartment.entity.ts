@@ -10,6 +10,4 @@ export class Apartment {
 
   @Column()
   price: string;
-
-
 }
