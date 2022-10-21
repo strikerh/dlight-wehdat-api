@@ -10,8 +10,13 @@ export interface Config {
 export default () => ({
   port: Number(process.env.APP_PORT) || 0,
   database: {
-    user: process.env.DATABASE_USER,
-    port: process.env.DATABASE_PORT,
-    password: process.env.DATABASE_PASSWORD,
+    type: process.env.DATABASE_HOST || 'mysql',
+    host: process.env.DATABASE_TYPE || 'localhost',
+    port: process.env.DATABASE_PORT || 3306,
+    username: process.env.DATABASE_USERNAME || 'root',
+    password: process.env.DATABASE_PASSWORD.toString() === '' ? process.env.DATABASE_PASSWORD : '',
+    database: process.env.DATABASE_DATABASE || 'dl_dlight',
+    synchronize: process.env.DATABASE_SYNCHRONIZE || true,
+    entities: [],
   },
 });
