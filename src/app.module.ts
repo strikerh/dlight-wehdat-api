@@ -9,7 +9,7 @@ import configuration from './config/configuration';
     ConfigModule.forRoot({
       isGlobal: true,
       load: [configuration],
-      envFilePath: ['.env', '.env.dev'],
+      envFilePath: ['.env.dev', '.env'],
     }),
   ],
   controllers: [AppController],
