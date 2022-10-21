@@ -1,3 +1,5 @@
+import { Apartment } from '../apartment/entities/apartment.entity';
+
 export interface Config {
   port: number;
   database: {
@@ -17,6 +19,6 @@ export default () => ({
     password: process.env.DATABASE_PASSWORD.toString(),
     database: process.env.DATABASE_DATABASE || 'dl_dlight',
     synchronize: process.env.DATABASE_SYNCHRONIZE || true,
-    entities: [],
+    entities: [Apartment],
   },
 });
