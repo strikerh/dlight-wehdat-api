@@ -13,10 +13,10 @@ import { DatabaseConfig } from './config/database.config';
       load: [configuration],
       envFilePath: ['.env.dev', '.env'],
     }),
-    // TypeOrmModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   useClass: DatabaseConfig,
-    // }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      useClass: DatabaseConfig,
+    }),
   ],
   controllers: [AppController],
   providers: [AppService],
