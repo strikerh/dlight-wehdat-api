@@ -24,7 +24,7 @@ export class ApartmentController {
   @Post()
   @UsePipes(ValidationPipe)
   create(@Body() createApartmentDto: any) {
-    return createApartmentDto;
+    return 'createApartmentDto';
   }
 
   @Get()
