@@ -9,11 +9,21 @@ import { Apartment } from './entities/apartment.entity';
 export class ApartmentService {
   constructor(
     @InjectRepository(Apartment)
-    private usersRepository: Repository<Apartment>,
+    private apartmentRepository: Repository<Apartment>,
   ) {}
 
   create(createApartmentDto: CreateApartmentDto) {
-    return createApartmentDto;
+    const sdf = this.apartmentRepository.create();
+    sdf.name = createApartmentDto.name;
+    sdf.description = createApartmentDto.description;
+    sdf.price = Number(createApartmentDto.price.replace(',', ''));
+    sdf.period = createApartmentDto.period;
+    sdf.address = createApartmentDto.address;
+    sdf.contactNumber = createApartmentDto.contactNumber;
+    sdf.images = createApartmentDto.images;
+    sdf.features = createApartmentDto.features;
+    sdf.latLng = createApartmentDto.latLng;
+    return this.apartmentRepository.save(sdf);
   }
 
   findAll() {
