@@ -12,13 +12,13 @@ import {
 import { ApartmentService } from './apartment.service';
 import { CreateApartmentDto } from './dto/create-apartment.dto';
 import { UpdateApartmentDto } from './dto/update-apartment.dto';
-import { ConfigService } from '@nestjs/config';
+
 
 @Controller('v1/apartments')
 export class ApartmentController {
   constructor(
     private readonly apartmentService: ApartmentService,
-    private readonly configService: ConfigService,
+
   ) {}
 
   @Post()
@@ -33,7 +33,7 @@ export class ApartmentController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-     return { df: this.configService.get('database') };
+
     // return this.apartmentService.findOne(+id);
   }
 
