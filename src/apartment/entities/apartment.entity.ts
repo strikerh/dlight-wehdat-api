@@ -10,9 +10,8 @@ export class Apartment {
 
   @Column({
     nullable: true,
-    type: 'float',
   })
-  price: number;
+  price: string;
 
   @Column({
     nullable: true,

@@ -13,16 +13,7 @@ export class ApartmentService {
   ) {}
 
   create(createApartmentDto: CreateApartmentDto) {
-    const apartment = this.apartmentRepository.create();
-    apartment.name = createApartmentDto.name;
-    apartment.description = createApartmentDto.description;
-    apartment.price = Number(createApartmentDto.price.replace(',', ''));
-    apartment.period = createApartmentDto.period;
-    apartment.address = createApartmentDto.address;
-    apartment.contactNumber = createApartmentDto.contactNumber;
-    apartment.images = createApartmentDto.images;
-    apartment.features = createApartmentDto.features;
-    apartment.latLng = createApartmentDto.latLng;
+    const apartment = this.apartmentRepository.create(createApartmentDto);
     return this.apartmentRepository.save(apartment);
   }
 
@@ -34,11 +25,11 @@ export class ApartmentService {
     return this.apartmentRepository.findOneBy({ id });
   }
 
-  update(id: number, updateApartmentDto: UpdateApartmentDto) {
-    return `This action updates a #${id} apartment`;
+  async update(id: number, updateApartmentDto: UpdateApartmentDto) {
+    return this.apartmentRepository.update(id, updateApartmentDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} apartment`;
+    return this.apartmentRepository.delete(id);
   }
 }

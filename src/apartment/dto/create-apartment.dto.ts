@@ -1,6 +1,8 @@
 import { IsNotEmpty } from 'class-validator';
+import { PartialType } from '@nestjs/mapped-types';
+import { Apartment } from '../entities/apartment.entity';
 
-export class CreateApartmentDto {
+export class CreateApartmentDto extends PartialType(Apartment) {
   @IsNotEmpty()
   name: string;
   price?: string;
