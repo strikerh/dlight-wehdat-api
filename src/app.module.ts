@@ -4,15 +4,10 @@ import { AppService } from './app.service';
 import { ApartmentModule } from './apartment/apartment.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Apartment } from './apartment/entities/apartment.entity';
-import { ConfigModule } from '@nestjs/config';
-import { configuration } from './config/configuration';
+
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
-      load: [configuration],
-    }),
     ApartmentModule,
     TypeOrmModule.forRoot({
       type: 'mysql',

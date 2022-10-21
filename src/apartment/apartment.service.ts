@@ -13,7 +13,6 @@ export class ApartmentService {
   ) {}
 
   async create(createApartmentDto: CreateApartmentDto) {
-
     return 'this.apartmentRepository.save(createApartmentDto)';
     // return 'This action adds a new apartment';
   }

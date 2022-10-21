@@ -6,8 +6,6 @@ import {
   Patch,
   Param,
   Delete,
-  UsePipes,
-  ValidationPipe,
 } from '@nestjs/common';
 import { ApartmentService } from './apartment.service';
 import { CreateApartmentDto } from './dto/create-apartment.dto';
@@ -22,7 +20,6 @@ export class ApartmentController {
   ) {}
 
   @Post()
-  @UsePipes(ValidationPipe)
   create(@Body() createApartmentDto: CreateApartmentDto) {
     return this.apartmentService.create(createApartmentDto);
   }
