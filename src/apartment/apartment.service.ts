@@ -13,25 +13,25 @@ export class ApartmentService {
   ) {}
 
   create(createApartmentDto: CreateApartmentDto) {
-    const sdf = this.apartmentRepository.create();
-    sdf.name = createApartmentDto.name;
-    sdf.description = createApartmentDto.description;
-    sdf.price = Number(createApartmentDto.price.replace(',', ''));
-    sdf.period = createApartmentDto.period;
-    sdf.address = createApartmentDto.address;
-    sdf.contactNumber = createApartmentDto.contactNumber;
-    sdf.images = createApartmentDto.images;
-    sdf.features = createApartmentDto.features;
-    sdf.latLng = createApartmentDto.latLng;
-    return this.apartmentRepository.save(sdf);
+    const apartment = this.apartmentRepository.create();
+    apartment.name = createApartmentDto.name;
+    apartment.description = createApartmentDto.description;
+    apartment.price = Number(createApartmentDto.price.replace(',', ''));
+    apartment.period = createApartmentDto.period;
+    apartment.address = createApartmentDto.address;
+    apartment.contactNumber = createApartmentDto.contactNumber;
+    apartment.images = createApartmentDto.images;
+    apartment.features = createApartmentDto.features;
+    apartment.latLng = createApartmentDto.latLng;
+    return this.apartmentRepository.save(apartment);
   }
 
   findAll() {
-    return `This action returns all apartment`;
+    return this.apartmentRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} apartment`;
+    return this.apartmentRepository.findOneBy({ id });
   }
 
   update(id: number, updateApartmentDto: UpdateApartmentDto) {
