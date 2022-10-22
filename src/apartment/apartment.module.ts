@@ -7,6 +7,11 @@ import { Apartment } from './entities/apartment.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Apartment])],
   controllers: [ApartmentController],
-  providers: [ApartmentService],
+  providers: [
+    ApartmentService,
+    /* {  provide: APP_GUARD,
+          useClass: JwtAuthGuard,
+        },*/
+  ],
 })
 export class ApartmentModule {}
