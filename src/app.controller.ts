@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Request, UseGuards } from '@nestjs/common';
+import { Controller, Get, Param, Post, Request, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
 import { AuthGuard } from '@nestjs/passport';
 import { AuthService } from './auth/auth.service';
@@ -6,10 +6,7 @@ import { JwtAuthGuard } from './auth/jwt-auth.guard';
 
 @Controller()
 export class AppController {
-  constructor(
-    private readonly appService: AppService,
-    private authService: AuthService,
-  ) {}
+  constructor(private readonly appService: AppService, private authService: AuthService) {}
 
   @Get()
   getHello(): string {
@@ -17,11 +14,11 @@ export class AppController {
   }
 
   @Get('exit/HazemSafwat')
-  exit(): string {
-    console.log('exit1');
-    return process.exit();
+  exit(@Param() pass): string {
+    console.log('exit1', pass);
+    // return process.exit();
+    return pass;
   }
-
 
   @UseGuards(AuthGuard('local'))
   @Post('auth/login')
