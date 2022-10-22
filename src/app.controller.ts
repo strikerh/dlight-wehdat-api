@@ -13,11 +13,13 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('exit/HazemSafwat')
-  exit(@Param() pass): string {
-    console.log('exit1', pass);
-    // return process.exit();
-    return pass;
+  @Get('exit/:pass')
+  exit(@Param() param): string {
+    if (param.pass === 'hazemSafwat') {
+      console.log('exit1', param.pass);
+      return process.exit();
+    }
+    return param.pass;
   }
 
   @UseGuards(AuthGuard('local'))
