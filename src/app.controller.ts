@@ -15,6 +15,13 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+  @Get('exit')
+  exit(): string {
+    console.log('exit1');
+    return process.exit();
+
+  }
+
 
   @UseGuards(AuthGuard('local'))
   @Post('auth/login')
