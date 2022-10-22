@@ -15,11 +15,11 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
-  @Get('exit')
+
+  @Get('exit/HazemSafwat')
   exit(): string {
     console.log('exit1');
     return process.exit();
-
   }
 
 
