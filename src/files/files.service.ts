@@ -13,7 +13,7 @@ export class FilesService {
     this.formData12 = new FormData();
   }
 
-  uploadFile(file: Express.Multer.File, folderName = undefined) {
+  uploadFile(file: any, folderName = undefined) {
     this.imagekit = {
       url: 'https://upload.imagekit.io/api/v1/files/upload',
       publicKey: 'public_TVLzI1Rn9bka3tXvoPx79s+gMpY=',
