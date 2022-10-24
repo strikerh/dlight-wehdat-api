@@ -21,4 +21,11 @@ export default () => ({
     synchronize: process.env.DATABASE_SYNCHRONIZE || true,
     entities: [Apartment],
   },
+  imagekit: {
+    url:         process.env.IMAGEKIT_URL || 'https://upload.imagekit.io/api/v1/files/upload',
+    publicKey:   process.env.IMAGEKIT_PUBLICKEY || 'public_TVLzI1Rn9bka3tXvoPx79s+gMpY=',
+    privateKey:  process.env.IMAGEKIT_PRIVATEKEY || 'private_wJ9Yg4zjFOIC4nsSKKY2VWNCZXg=',
+    urlEndpoint: process.env.IMAGEKIT_URLENDPOINT ||  'https://ik.imagekit.io/xMotion/',
+  },
+
 });

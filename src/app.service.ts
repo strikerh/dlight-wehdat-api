@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { count } from "rxjs";
 
 @Injectable()
 export class AppService {

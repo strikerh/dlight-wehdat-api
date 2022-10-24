@@ -17,6 +17,10 @@ export class ApartmentService {
     return this.apartmentRepository.save(apartment);
   }
 
+  uploadImages(){
+
+  }
+
   findAll() {
     return this.apartmentRepository.find();
   }
