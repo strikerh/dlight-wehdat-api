@@ -11,6 +11,7 @@ export class AppService {
     this.count++;
     return {
       message: 'Server is Working!',
+      version: '3',
       count: this.count,
       port: this.configService.get('port'),
       database: this.configService.get('database'),
