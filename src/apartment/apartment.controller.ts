@@ -29,6 +29,7 @@ export class ApartmentController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateApartmentDto: UpdateApartmentDto) {
+    console.log(updateApartmentDto);
     return this.apartmentService.update(+id, updateApartmentDto);
   }
 

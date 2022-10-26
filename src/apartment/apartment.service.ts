@@ -17,9 +17,7 @@ export class ApartmentService {
     return this.apartmentRepository.save(apartment);
   }
 
-  uploadImages(){
-
-  }
+  uploadImages() {}
 
   findAll() {
     return this.apartmentRepository.find();
@@ -30,7 +28,8 @@ export class ApartmentService {
   }
 
   async update(id: number, updateApartmentDto: UpdateApartmentDto) {
-    return this.apartmentRepository.update(id, updateApartmentDto);
+    await this.apartmentRepository.update(id, updateApartmentDto);
+    return this.apartmentRepository.findOneBy({ id });
   }
 
   remove(id: number) {
